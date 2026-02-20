@@ -96,7 +96,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['LanguageSwitcher', { ...LanguageSwitcher, componentType: 'client' }],
   ['Image', { ...Image }],
   ['HeroBanner', { ...HeroBanner }],
-  ['Header', { ...Header }],
+  ['Header', { ...Header, componentType: 'client' }],
   ['Footer', { ...Footer }],
   ['Features', { ...Features }],
   ['ContentBlock', { ...ContentBlock }],
