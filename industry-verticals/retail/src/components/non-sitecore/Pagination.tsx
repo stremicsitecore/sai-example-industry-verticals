@@ -38,7 +38,7 @@ export const Pagination = ({
       {currentPage > 1 && (
         <button
           onClick={() => handlePageChange(currentPage - 1)}
-          className={`${paginationButtonClasses} bg-background-accent`}
+          className={`${paginationButtonClasses} bg-background-accent transition-colors hover:bg-[var(--color-primary)]/10`}
         >
           <span className="md:hidden">
             <ChevronLeft size={16} />
@@ -51,8 +51,10 @@ export const Pagination = ({
         <>
           <button
             onClick={() => handlePageChange(1)}
-            className={`${paginationButtonClasses} ${
-              currentPage === 1 ? 'bg-accent text-background' : 'bg-background-accent'
+            className={`${paginationButtonClasses} transition-colors ${
+              currentPage === 1
+                ? 'text-background bg-[var(--color-primary)]'
+                : 'bg-background-accent hover:bg-[var(--color-primary)]/10'
             }`}
           >
             1
@@ -65,8 +67,10 @@ export const Pagination = ({
         <button
           key={page}
           onClick={() => handlePageChange(page)}
-          className={`${paginationButtonClasses} ${
-            page === currentPage ? 'bg-accent text-background' : 'bg-background-accent'
+          className={`${paginationButtonClasses} transition-colors ${
+            page === currentPage
+              ? 'text-background bg-[var(--color-primary)]'
+              : 'bg-background-accent hover:bg-[var(--color-primary)]/10'
           }`}
         >
           {page}
@@ -78,8 +82,10 @@ export const Pagination = ({
           <span className="md:px-2">...</span>
           <button
             onClick={() => handlePageChange(totalPages)}
-            className={`${paginationButtonClasses} ${
-              currentPage === totalPages ? 'bg-accent text-background' : 'bg-background-accent'
+            className={`${paginationButtonClasses} transition-colors ${
+              currentPage === totalPages
+                ? 'text-background bg-[var(--color-primary)]'
+                : 'bg-background-accent hover:bg-[var(--color-primary)]/10'
             }`}
           >
             {totalPages}
@@ -90,7 +96,7 @@ export const Pagination = ({
       {currentPage < totalPages && (
         <button
           onClick={() => handlePageChange(currentPage + 1)}
-          className={`${paginationButtonClasses} bg-background-accent`}
+          className={`${paginationButtonClasses} bg-background-accent transition-colors hover:bg-[var(--color-primary)]/10`}
         >
           <span className="md:hidden">
             <ChevronRight size={16} />

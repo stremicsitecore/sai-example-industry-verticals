@@ -115,32 +115,116 @@ export const ImageGrid = (props: FeaturesProps) => {
 export const ThreeColGridCentered = (props: FeaturesProps) => {
   // results of the graphql
   const results = props.fields.data.datasource.children.results;
+  const featureSectionTitle = props.fields.data.datasource.title;
 
   return (
     <FeatureWrapper props={props}>
-      <div className="container flex flex-col flex-wrap justify-evenly gap-20 md:flex-row lg:gap-20">
-        {results.map((item, index) => {
-          const title = item.featureTitle.jsonValue;
-          const description = item.featureDescription.jsonValue;
-          const image = item.featureImage.jsonValue;
-          return (
-            <div className="flex flex-col items-center justify-start 2xl:w-80" key={index}>
-              {/* Image */}
-              <div className="bg-accent mb-7 flex h-20 w-20 items-center justify-center rounded-full">
-                <Image field={image} />
-              </div>
-              {/* Title and Description */}
-              <div className="flex flex-col items-center justify-center">
-                <div className="mb-2 leading-0.5">
-                  <Text tag="h5" className="text-accent" field={title} />
+      <div className="container py-12">
+        {/* Title */}
+        <h2 className="text-foreground mb-12 text-4xl font-bold">
+          <Text field={featureSectionTitle.jsonValue} />
+        </h2>
+
+        {/* First Row - 3 Cards */}
+        <div className="mb-8 grid grid-cols-1 gap-6 md:grid-cols-3">
+          {results.slice(0, 3).map((item, index) => {
+            const title = item.featureTitle.jsonValue;
+            const description = item.featureDescription.jsonValue;
+            const image = item.featureImage.jsonValue;
+            const link = item.featureLink.jsonValue;
+
+            // First card (Contact Us) - white background with blue left border
+            if (index === 0) {
+              return (
+                <div
+                  key={index}
+                  className="relative flex flex-col border-l-4 border-[#003366] bg-white p-6 shadow-sm"
+                >
+                  <div className="text-foreground mb-4 text-xs font-semibold tracking-wide uppercase">
+                    <Text field={title} />
+                  </div>
+                  <div className="text-foreground mb-4 font-bold">
+                    <Text field={description} />
+                  </div>
+                  {image?.value?.src && (
+                    <div className="mt-auto">
+                      <Image field={image} className="h-auto w-full max-w-[200px]" />
+                    </div>
+                  )}
+                  {link?.value?.href && (
+                    <Link
+                      field={link}
+                      className="mt-4 text-sm font-medium text-[#003366] hover:underline"
+                    />
+                  )}
                 </div>
-                <div className="text-background-muted-light text-center">
+              );
+            }
+
+            // Second and third cards (Resources, Newsletter) - gray background with icon
+            return (
+              <div key={index} className="flex flex-col bg-gray-100 p-6 shadow-sm">
+                {image?.value?.src && (
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center">
+                    <Image field={image} className="h-full w-full object-contain" />
+                  </div>
+                )}
+                <div className="text-foreground mb-4 text-xs font-semibold tracking-wide uppercase">
+                  <Text field={title} />
+                </div>
+                <div className="text-foreground font-bold">
                   <Text field={description} />
                 </div>
+                {link?.value?.href && (
+                  <Link
+                    field={link}
+                    className="mt-4 text-sm font-medium text-[#003366] hover:underline"
+                  />
+                )}
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
+
+        {/* Second Row - 2 Cards */}
+        {results.length > 3 && (
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            {/* Fourth card (DwyerOmega Story) - gray background with logo */}
+            {results[3] && (
+              <div className="flex flex-col bg-gray-100 p-6 shadow-sm">
+                {results[3].featureImage?.jsonValue?.value?.src && (
+                  <div className="mb-4">
+                    <Image
+                      field={results[3].featureImage.jsonValue}
+                      className="h-auto w-auto max-w-[200px]"
+                    />
+                  </div>
+                )}
+                <div className="text-foreground">
+                  <Text field={results[3].featureDescription.jsonValue} />
+                </div>
+                {results[3].featureLink?.jsonValue?.value?.href && (
+                  <Link
+                    field={results[3].featureLink.jsonValue}
+                    className="mt-4 text-sm font-medium text-[#003366] hover:underline"
+                  />
+                )}
+              </div>
+            )}
+
+            {/* Fifth card (Industrial Image) - circular image */}
+            {results[4] && results[4].featureImage?.jsonValue?.value?.src && (
+              <div className="flex items-center justify-center">
+                <div className="relative h-64 w-64 overflow-hidden rounded-full">
+                  <Image
+                    field={results[4].featureImage.jsonValue}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+              </div>
+            )}
+          </div>
+        )}
       </div>
     </FeatureWrapper>
   );
@@ -158,7 +242,7 @@ export const NumberedGrid = (props: FeaturesProps) => {
           const description = item?.featureDescription.jsonValue;
           return (
             <div
-              className="group text-background hover:bg-accent cursor-pointer rounded-xl p-6"
+              className="group text-background cursor-pointer rounded-xl p-6 transition-colors hover:bg-[var(--color-primary)]"
               key={index}
             >
               {/* Generated Number */}
@@ -167,7 +251,7 @@ export const NumberedGrid = (props: FeaturesProps) => {
               </h1>
               {/* Title and Description */}
               <div>
-                <div className="text-accent group-hover:text-background mb-4 text-2xl leading-8 font-bold">
+                <div className="group-hover:text-background mb-4 text-2xl leading-8 font-bold text-[var(--color-primary)]">
                   <Text field={title} />
                 </div>
                 <div className="text-background-muted-dark group-hover:text-background leading-7">

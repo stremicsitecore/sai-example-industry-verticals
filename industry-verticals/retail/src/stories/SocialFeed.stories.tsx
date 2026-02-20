@@ -27,7 +27,7 @@ const baseRendering = {
 
 const baseFields = {
   Eyebrow: createTextField('Share your own setup with'),
-  Heading: createTextField('#FormaLuxDécor'),
+  Heading: createTextField('#DwyerOmega'),
   Image1: createImageField(),
   Image2: createImageField(),
   Image3: createImageField(),

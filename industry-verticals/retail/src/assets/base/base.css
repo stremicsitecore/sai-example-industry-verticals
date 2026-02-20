@@ -54,7 +54,8 @@
   }
 
   .eyebrow {
-    @apply text-accent text-lg font-semibold tracking-[0.175em] uppercase;
+    /* DwyerOmega: Eyebrow text uses primary brand blue */
+    @apply text-lg font-semibold tracking-[0.175em] text-[var(--color-primary)] uppercase;
   }
 
   .image-cover {

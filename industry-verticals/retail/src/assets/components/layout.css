@@ -40,14 +40,15 @@
   }
 }
 
+/* DwyerOmega: Dark background uses primary brand blue */
 .container-dark-background {
   > .component-content {
-    @apply border-accent;
+    @apply border-[var(--color-primary)];
   }
 
   &:not(.container),
   &.container > .component-content {
-    @apply bg-accent border-accent text-background;
+    @apply text-background border-[var(--color-primary)] bg-[var(--color-primary)];
 
     * {
       @apply text-inherit;

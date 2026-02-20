@@ -64,55 +64,34 @@ const Footer = (props: FooterProps): JSX.Element => {
   ];
 
   return (
-    <div className={`bg-foreground py-12 text-white ${sxaStyles}`} id={id}>
+    <div className={`bg-[#003366] py-8 text-white ${sxaStyles}`} id={id}>
       <div className="container mx-auto">
-        {/* content section */}
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {/* footer content data */}
-          <div>
-            <div className="mb-4 flex max-w-40 space-x-2">
-              <ContentSdkImage field={props.fields.Logo} width={200} />
-            </div>
-            <div className="**:text-foreground-secondary mb-4">
-              <RichText field={props.fields.Description} />
-            </div>
-            <Placeholder name={phKeyFour} rendering={props.rendering} />
+        {/* Quick Links Section */}
+        <div className="mb-6">
+          <h3 className="mb-4 text-xl font-semibold text-white">
+            <ContentSdkText field={props.fields.TitleThree} />
+          </h3>
+          
+          {/* Quick Links Buttons - Wrapped in flex container for pill buttons */}
+          <div className="flex flex-wrap gap-3 [&_.component.link-list]:contents [&_.component.link-list_ul]:flex [&_.component.link-list_ul]:flex-wrap [&_.component.link-list_ul]:gap-3 [&_.component.link-list_ul]:list-none [&_.component.link-list_li]:m-0 [&_.component.link-list_a]:rounded-full [&_.component.link-list_a]:bg-gray-200 [&_.component.link-list_a]:px-4 [&_.component.link-list_a]:py-2 [&_.component.link-list_a]:text-sm [&_.component.link-list_a]:font-medium [&_.component.link-list_a]:text-gray-800 [&_.component.link-list_a]:hover:bg-gray-300 [&_.component.link-list_a]:transition-colors [&_.component.link-list_a]:no-underline">
+            <Placeholder name={phKeyOne} rendering={props.rendering} />
+            <Placeholder name={phKeyTwo} rendering={props.rendering} />
           </div>
-
-          {/* footer link lists */}
-          {sections.map(({ key, title, content }) => (
-            <div key={key}>
-              <div className="mb-4 text-lg font-semibold">{title}</div>
-              <div className="text-foreground-secondary">{content}</div>
-            </div>
-          ))}
         </div>
 
-        {/* seperator */}
-        <hr className="border-foreground-light my-8" />
+        {/* Separator */}
+        <hr className="border-white my-6" />
 
-        {/* copyright section */}
-        <div className="flex flex-col items-center justify-between md:flex-row">
-          <p className="text-foreground-secondary order-2 mt-8 text-sm md:order-1 md:mt-0">
-            <ContentSdkText field={props.fields.CopyrightText} />
-          </p>
-          <div className="mt-4 grid grid-cols-2 justify-between gap-6 md:order-2 md:mt-0 md:flex">
-            <ContentSdkLink
-              className="text-foreground-secondary hover:text-background text-sm"
-              field={props.fields.PolicyText}
-            />
-            <ContentSdkLink
-              className="text-foreground-secondary hover:text-background text-sm"
-              field={props.fields.TermsText}
-            />
-            <ContentSdkLink
-              className="text-foreground-secondary hover:text-background text-sm"
-              field={props.fields.CookiesText}
-            />
-            <ContentSdkLink
-              className="text-foreground-secondary hover:text-background text-sm"
-              field={props.fields.ContactText}
-            />
+        {/* Footer Labels Section */}
+        <div className="flex flex-wrap gap-6 text-white">
+          <div>
+            <ContentSdkText field={props.fields.TitleOne} />
+          </div>
+          <div>
+            <ContentSdkText field={props.fields.TitleTwo} />
+          </div>
+          <div>
+            <Placeholder name={phKeyThree} rendering={props.rendering} />
           </div>
         </div>
       </div>

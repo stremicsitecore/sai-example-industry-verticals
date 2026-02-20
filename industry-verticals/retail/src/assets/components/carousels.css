@@ -2,12 +2,13 @@
   @apply relative m-1 h-4 w-4 rounded-full bg-gray-400;
 }
 
+/* DwyerOmega: Carousel pagination uses primary brand blue */
 .article-carousel-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  @apply border-accent border-2 bg-transparent;
+  @apply border-2 border-[var(--color-primary)] bg-transparent;
 }
 
 .article-carousel-pagination .swiper-pagination-bullet::after {
-  @apply bg-accent absolute top-1/2 left-1/2 h-1/2 w-1/2 rounded-full content-[''];
+  @apply absolute top-1/2 left-1/2 h-1/2 w-1/2 rounded-full bg-[var(--color-primary)] content-[''];
   @apply -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-300 ease-in-out;
 }
 

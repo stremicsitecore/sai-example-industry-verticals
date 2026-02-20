@@ -25,7 +25,7 @@ export const ProductCard = ({ product, url, className }: ProductCardProps) => {
   return (
     <Link href={url} passHref>
       <div
-        className={`flex min-h-123 w-full flex-col overflow-hidden rounded-2xl hover:drop-shadow-sm ${className}`}
+        className={`border-border flex min-h-123 w-full flex-col overflow-hidden rounded-2xl border transition-all hover:border-[var(--color-primary)] hover:drop-shadow-md ${className}`}
       >
         {/* Product Image */}
         <div className="bg-background-surface flex h-72 w-full items-center justify-center p-6">
@@ -49,7 +49,7 @@ export const ProductCard = ({ product, url, className }: ProductCardProps) => {
           <StarRating
             rating={product.Rating || 0}
             showOnlyFilled
-            className="!text-accent mt-1 mb-5"
+            className="mt-1 mb-5 !text-[var(--color-primary)]"
           />
 
           <h6 className="!text-foreground mt-auto font-semibold">
