@@ -1,12 +1,9 @@
 import {
   ComponentParams,
   ComponentRendering,
-  Image,
   ImageField,
-  Link,
   LinkField,
   Placeholder,
-  RichText,
   RichTextField,
   Text,
   TextField,
@@ -40,36 +37,6 @@ export const Default = (props: FooterProps) => {
   const phKeyOne = `footer-list-first-${props?.params?.DynamicPlaceholderId}`;
   const phKeyTwo = `footer-list-second-${props?.params?.DynamicPlaceholderId}`;
   const phKeyThree = `footer-list-third-${props?.params?.DynamicPlaceholderId}`;
-  const phKeyFour = `footer-list-fourth-${props?.params?.DynamicPlaceholderId}`;
-  const phKeyFive = `footer-list-fifth-${props?.params?.DynamicPlaceholderId}`;
-
-  const sections = [
-    {
-      key: 'first_nav',
-      title: <Text field={props.fields.TitleOne} />,
-      content: <Placeholder name={phKeyOne} rendering={props.rendering} />,
-    },
-    {
-      key: 'second_nav',
-      title: <Text field={props.fields.TitleTwo} />,
-      content: <Placeholder name={phKeyTwo} rendering={props.rendering} />,
-    },
-    {
-      key: 'third_nav',
-      title: <Text field={props.fields.TitleThree} />,
-      content: <Placeholder name={phKeyThree} rendering={props.rendering} />,
-    },
-    {
-      key: 'fourth_nav',
-      title: <Text field={props.fields.TitleFour} />,
-      content: <Placeholder name={phKeyFour} rendering={props.rendering} />,
-    },
-    {
-      key: 'fifth_nav',
-      title: <Text field={props.fields.TitleFive} />,
-      content: <Placeholder name={phKeyFive} rendering={props.rendering} />,
-    },
-  ];
 
   return (
     <section className={`component footer relative ${props.params.styles} overflow-hidden`} id={id}>

@@ -3,15 +3,10 @@ import {
   ImageField,
   LinkField,
   NextImage as ContentSdkImage,
-  Text as ContentSdkText,
-  RichText as ContentSdkRichText,
   useSitecore,
-  Placeholder,
-  Link,
 } from '@sitecore-content-sdk/nextjs';
 import { ComponentProps } from '@/lib/component-props';
-import AccentLine from '@/assets/icons/accent-line/AccentLine';
-import { CommonStyles, HeroBannerStyles, LayoutStyles } from '@/types/styleFlags';
+import { HeroBannerStyles } from '@/types/styleFlags';
 import clsx from 'clsx';
 import { ShoppingCart } from 'lucide-react';
 import { useState } from 'react';
@@ -90,11 +85,7 @@ const HeroBannerCommon = ({
 
 export const Default = ({ params, fields, rendering }: HeroBannerProps) => {
   const styles = params.styles || '';
-  const hideAccentLine = styles.includes(CommonStyles.HideAccentLine);
-  const withPlaceholder = styles.includes(HeroBannerStyles.WithPlaceholder);
-  const reverseLayout = styles.includes(LayoutStyles.Reversed);
   const screenLayer = styles.includes(HeroBannerStyles.ScreenLayer);
-  const searchBarPlaceholderKey = `hero-banner-search-bar-${params.DynamicPlaceholderId}`;
 
   const [partNumbers, setPartNumbers] = useState(['', '']);
   const [quantities, setQuantities] = useState(['', '']);
@@ -181,11 +172,7 @@ export const Default = ({ params, fields, rendering }: HeroBannerProps) => {
 
 export const TopContent = ({ params, fields, rendering }: HeroBannerProps) => {
   const styles = params.styles || '';
-  const hideAccentLine = styles.includes(CommonStyles.HideAccentLine);
-  const withPlaceholder = styles.includes(HeroBannerStyles.WithPlaceholder);
-  const reverseLayout = styles.includes(LayoutStyles.Reversed);
   const screenLayer = styles.includes(HeroBannerStyles.ScreenLayer);
-  const searchBarPlaceholderKey = `hero-banner-search-bar-${params.DynamicPlaceholderId}`;
 
   const [partNumbers, setPartNumbers] = useState(['', '']);
   const [quantities, setQuantities] = useState(['', '']);
