@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 import { ComponentProps } from 'react';
 import { Default as ProductListing } from '../components/product-listing/ProductListing';
 import { CommonParams, CommonRendering } from './common/commonData';

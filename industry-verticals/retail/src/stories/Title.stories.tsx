@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 import { Default as Title } from '../components/title/Title';
 import { ComponentProps } from 'react';
 import { CommonParams, CommonRendering } from './common/commonData';

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 import { expect, waitFor } from 'storybook/test';
 import { Default as Navigation } from '../components/navigation/Navigation';
 import { ComponentProps } from 'react';

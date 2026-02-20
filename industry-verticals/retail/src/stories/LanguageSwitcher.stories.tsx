@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 import LanguageSwitcher from '../components/language-switcher/LanguageSwitcher';
 import { CommonParams, CommonRendering } from './common/commonData';
 

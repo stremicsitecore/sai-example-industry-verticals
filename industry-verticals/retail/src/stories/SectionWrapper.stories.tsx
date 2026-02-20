@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 import { ComponentProps } from 'react';
 import { Default as SectionWrapper } from '../components/section-wrapper/SectionWrapper';
 import { CommonParams, CommonRendering } from './common/commonData';

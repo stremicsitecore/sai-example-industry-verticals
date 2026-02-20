@@ -1,4 +1,4 @@
-import type { Meta, StoryObj, ArgTypes } from '@storybook/nextjs-vite';
+import type { Meta, StoryObj, ArgTypes } from '@storybook/nextjs';
 import { ComponentProps } from 'react';
 import {
   Default as SubscribeBanner,

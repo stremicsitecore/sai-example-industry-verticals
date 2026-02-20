@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 import { Default as Promo, WithFullImage, PromoProps, WithQuote } from '../components/promo/Promo';
 import { CommonParams, CommonRendering } from './common/commonData';
 import {

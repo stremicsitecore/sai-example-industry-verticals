@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 import { Default as Footer } from '../components/footer/Footer';
 import { ComponentProps } from 'react';
 import { renderStorybookPlaceholder } from './helpers/renderStorybookPlaceholder';

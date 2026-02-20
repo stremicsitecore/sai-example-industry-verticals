@@ -1,5 +1,5 @@
 import { ComponentProps } from 'react';
-import type { Meta, StoryObj } from '@storybook/nextjs-vite';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 import { Default as ArticleDetails } from '../components/article-details/ArticleDetails';
 import { CommonParams, CommonRendering } from './common/commonData';
 import { renderStorybookPlaceholder } from './helpers/renderStorybookPlaceholder';

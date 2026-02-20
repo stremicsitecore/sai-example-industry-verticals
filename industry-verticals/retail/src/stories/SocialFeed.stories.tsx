@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 import { Default as SocialFeed } from '../components/social-feed/SocialFeed';
 import { ComponentProps } from 'react';
 import { CommonParams, CommonRendering } from './common/commonData';
